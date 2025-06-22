@@ -1,33 +1,17 @@
-# News App UI - Flutter
+# news_app_ui_setup
 
-![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+A new Flutter project.
 
-A modern news application with beautiful UI built with Flutter. Features category-based news browsing, smooth animations, and responsive design.
+## Getting Started
 
-## Features ✨
-- **Category Navigation**: Browse news by categories (Business, Entertainment, Health, Science, etc.)
-- **Top Headlines**: View trending news articles with images and descriptions
-- **Responsive Layout**: Adapts to different screen sizes
-- **Smooth Animations**: Physics-based scrolling and transition effects
-- **Clean Architecture**: Well-organized code with clear separation of concerns
-- **API Integration**: Fetches real-time news data from NewsAPI
+This project is a starting point for a Flutter application.
 
-## Project Structure 🗂️
-```plaintext
-lib/
-├── models/
-│   ├── article_model.dart
-│   └── category_model.dart
-├── services/
-│   └── news_service.dart
-├── views/
-│   ├── home_view.dart
-│   └── category_view.dart
-├── widgets/
-│   ├── categories_list_view.dart
-│   ├── category_card.dart
-│   ├── news_list_view.dart
-│   ├── news_list_view_builder.dart
-│   └── news_tile.dart
-└── main.dartv
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+# news_app
