@@ -8,6 +8,10 @@ A modern news application with beautiful UI built with Flutter. Features categor
 ## Features ✨
 - **Category Navigation**: Browse news by categories (Business, Entertainment, Health, Science, etc.)
 - **Top Headlines**: View trending news articles with images and descriptions
+- **Pull-to-Refresh**: Allows users to refresh the news feed by swiping down from the top.
+- **Shimmer Effect**: Displays a shimmering placeholder while news articles are loading, providing a better user experience.
+- **Modern UI**: A card-based design with shadows for a clean and modern look.
+- **Image Caching**: Caches network images to improve performance and reduce network usage.
 - **Responsive Layout**: Adapts to different screen sizes
 - **Smooth Animations**: Physics-based scrolling and transition effects
 - **Clean Architecture**: Well-organized code with clear separation of concerns
@@ -29,5 +33,6 @@ lib/
 │   ├── category_card.dart
 │   ├── news_list_view.dart
 │   ├── news_list_view_builder.dart
-│   └── news_tile.dart
+│   ├── news_tile.dart
+│   └── shimmer_list_view.dart
 └── main.dart

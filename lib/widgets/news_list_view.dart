@@ -1,7 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_ui_setup/models/article_model.dart';
-import 'package:news_app_ui_setup/services/news_service.dart';
 
 import 'news_tile.dart';
 
