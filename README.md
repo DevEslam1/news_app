@@ -37,7 +37,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/your_username_/news_app.git
+    git clone https://github.com/DevEslam1/news_app.git
     ```
 2.  Install packages
     ```sh
@@ -51,3 +51,4 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     flutter run
     ```
+
