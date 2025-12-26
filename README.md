@@ -19,8 +19,10 @@ A simple news application built with Flutter that displays the latest headlines 
 
 | Light Theme                                     | Dark Theme                                    |
 | ----------------------------------------------- | --------------------------------------------- |
-|  ![Uploading Simulator Screenshot - iPhone 16e - 2025-12-26 at 16.27.18.png…]()
-|  ![Uploading Simulator Screenshot - iPhone 16e - 2025-12-26 at 16.27.09.png…]() |
+|  <img width="1170" height="2532" alt="Simulator Screenshot - iPhone 16e - 2025-12-26 at 16 27 18" src="https://github.com/user-attachments/assets/c06369aa-f18a-4fa6-ba3e-8d6bf6098d97" />
+
+|   |<img width="1170" height="2532" alt="Simulator Screenshot - iPhone 16e - 2025-12-26 at 16 27 09" src="https://github.com/user-attachments/assets/9711d6fc-5734-4ee6-9b89-8b8c692c16ef" />
+
 
 ## Dependencies
 
@@ -58,5 +60,6 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     flutter run
     ```
+
 
 
