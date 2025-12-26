@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_ui_setup/widgets/categories_list_view.dart';
+import 'package:news_app/utils/theme_provider.dart';
+import 'package:news_app/widgets/categories_list_view.dart';
 
 import '../widgets/news_list_view_builder.dart';
 
@@ -13,23 +14,38 @@ class HomeView extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'News',
-              style: TextStyle(color: Colors.black),
+        title: Builder(builder: (context) {
+          return Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('News',
+                  style: Theme.of(context).appBarTheme.titleTextStyle?.copyWith(
+                      color: Theme.of(context).appBarTheme.foregroundColor)),
+              const Text(
+                'Cloud',
+                style: TextStyle(color: Colors.orange),
+              ),
+            ],
+          );
+        }),
+        actions: [
+          IconButton(
+            onPressed: () {
+              isDarkMode.value = !isDarkMode.value;
+            },
+            icon: ValueListenableBuilder(
+              valueListenable: isDarkMode,
+              builder: (context, isDark, child) {
+                return Icon(
+                  isDark ? Icons.light_mode : Icons.dark_mode,
+                );
+              },
             ),
-            Text(
-              'Cloud',
-              style: TextStyle(color: Colors.orange),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-
         child: CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
@@ -44,15 +60,6 @@ class HomeView extends StatelessWidget {
             ),
           ],
         ),
-        // child: Column(
-        //   children: [
-        //     CategoriesListView(),
-        //     SizedBox(
-        //       height: 32,
-        //     ),
-        //     Expanded(child: NewsListView()),
-        //   ],
-        // ),
       ),
     );
   }

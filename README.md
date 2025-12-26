@@ -1,38 +1,53 @@
-# News App UI - Flutter
+# News App
 
-![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+A simple news application built with Flutter that displays the latest headlines from various categories.
 
-A modern news application with beautiful UI built with Flutter. Features category-based news browsing, smooth animations, and responsive design.
+## Features
 
-## Features ✨
-- **Category Navigation**: Browse news by categories (Business, Entertainment, Health, Science, etc.)
-- **Top Headlines**: View trending news articles with images and descriptions
-- **Pull-to-Refresh**: Allows users to refresh the news feed by swiping down from the top.
-- **Shimmer Effect**: Displays a shimmering placeholder while news articles are loading, providing a better user experience.
-- **Modern UI**: A card-based design with shadows for a clean and modern look.
-- **Image Caching**: Caches network images to improve performance and reduce network usage.
-- **Responsive Layout**: Adapts to different screen sizes
-- **Smooth Animations**: Physics-based scrolling and transition effects
-- **Clean Architecture**: Well-organized code with clear separation of concerns
-- **API Integration**: Fetches real-time news data from NewsAPI
+*   Browse news headlines by category.
+*   View news from different countries.
+*   Pull to refresh for the latest news.
+*   Shimmer loading effect while fetching data.
+*   Transparent app bar for a better reading experience.
+*   Dark mode support.
 
-## Project Structure 🗂️
-```plaintext
-lib/
-├── models/
-│   ├── article_model.dart
-│   └── category_model.dart
-├── services/
-│   └── news_service.dart
-├── views/
-│   ├── home_view.dart
-│   └── category_view.dart
-├── widgets/
-│   ├── categories_list_view.dart
-│   ├── category_card.dart
-│   ├── news_list_view.dart
-│   ├── news_list_view_builder.dart
-│   ├── news_tile.dart
-│   └── shimmer_list_view.dart
-└── main.dart
+## Screenshots
+
+| Light Theme                                     | Dark Theme                                    |
+| ----------------------------------------------- | --------------------------------------------- |
+| ![Light Theme Screenshot](screenshots/light.png) | ![Dark Theme Screenshot](screenshots/dark.png) |
+
+## Dependencies
+
+*   [dio](https://pub.dev/packages/dio): A powerful HTTP client for Dart, which is used to make requests to the News API.
+*   [shimmer](https://pub.dev/packages/shimmer): A Flutter package that provides an easy way to add a shimmer effect to your widgets.
+*   [cached_network_image](https://pub.dev/packages/cached_network_image): A Flutter library to load and cache network images.
+*   [flutter_lints](https://pub.dev/packages/flutter_lints): A package that contains a set of recommended lints to encourage good coding practices.
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+*   Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
+*   A News API key: [https://newsapi.org/](https://newsapi.org/)
+
+### Installation
+
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/your_username_/news_app.git
+    ```
+2.  Install packages
+    ```sh
+    flutter pub get
+    ```
+3.  Add your API key in `lib/services/news_service.dart`
+    ```dart
+    const String apiKey = 'YOUR_API_KEY';
+    ```
+4.  Run the app
+    ```sh
+    flutter run
+    ```
