@@ -4,34 +4,31 @@ A simple news application built with Flutter that displays the latest headlines 
 
 ## Features
 
-*   Browse news headlines by category.
-*   View news from different countries.
-*   Search for articles.
-*   Change country and language for the news.
-*   Pull to refresh for the latest news.
-*   Shimmer loading effect while fetching data.
-*   Transparent app bar for a better reading experience.
-*   Dynamic app bar title: includes an app icon and 'NewsCloud' text, where 'News' adapts to the theme and 'Cloud' is always orange.
-*   Dark mode support, configurable in settings and now the default.
-*   Offline snackbar changed to red for better visibility.
+* Browse news headlines by category.
+* View news from different countries.
+* Search for articles.
+* Change country and language for the news.
+* Pull to refresh for the latest news.
+* Shimmer loading effect while fetching data.
+* Transparent app bar for a better reading experience.
+* Dynamic app bar title: includes an app icon and 'NewsCloud' text, where 'News' adapts to the theme and 'Cloud' is always orange.
+* Dark mode support, configurable in settings and now the default.
+* Offline snackbar changed to red for better visibility.
 
 ## Screenshots
 
-| Light Theme                                     | Dark Theme                                    |
-| ----------------------------------------------- | --------------------------------------------- |
-|  <img width="1170" height="2532" alt="Simulator Screenshot - iPhone 16e - 2025-12-26 at 16 27 18" src="https://github.com/user-attachments/assets/c06369aa-f18a-4fa6-ba3e-8d6bf6098d97" />
-
-|   |<img width="1170" height="2532" alt="Simulator Screenshot - iPhone 16e - 2025-12-26 at 16 27 09" src="https://github.com/user-attachments/assets/9711d6fc-5734-4ee6-9b89-8b8c692c16ef" />
-
+| Light Theme | Dark Theme |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/c06369aa-f18a-4fa6-ba3e-8d6bf6098d97" width="300" alt="Light Theme" /> | <img src="https://github.com/user-attachments/assets/9711d6fc-5734-4ee6-9b89-8b8c692c16ef" width="300" alt="Dark Theme" /> |
 
 ## Dependencies
 
-*   [dio](https://pub.dev/packages/dio): A powerful HTTP client for Dart, which is used to make requests to the News API.
-*   [shimmer](https://pub.dev/packages/shimmer): A Flutter package that provides an easy way to add a shimmer effect to your widgets.
-*   [cached_network_image](https://pub.dev/packages/cached_network_image): A Flutter library to load and cache network images.
-*   [shared_preferences](https://pub.dev/packages/shared_preferences): A Flutter plugin for reading and writing simple key-value pairs.
-*   [provider](https://pub.dev/packages/provider): A wrapper around `InheritedWidget` to make them easier to use and more reusable.
-*   [flutter_lints](https://pub.dev/packages/flutter_lints): A package that contains a set of recommended lints to encourage good coding practices.
+* [dio](https://pub.dev/packages/dio): A powerful HTTP client for Dart, which is used to make requests to the News API.
+* [shimmer](https://pub.dev/packages/shimmer): A Flutter package that provides an easy way to add a shimmer effect to your widgets.
+* [cached_network_image](https://pub.dev/packages/cached_network_image): A Flutter library to load and cache network images.
+* [shared_preferences](https://pub.dev/packages/shared_preferences): A Flutter plugin for reading and writing simple key-value pairs.
+* [provider](https://pub.dev/packages/provider): A wrapper around `InheritedWidget` to make them easier to use and more reusable.
+* [flutter_lints](https://pub.dev/packages/flutter_lints): A package that contains a set of recommended lints to encourage good coding practices.
 
 ## Getting Started
 
@@ -39,14 +36,14 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-*   Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
-*   A News API key: [https://newsapi.org/](https://newsapi.org/)
+* Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
+* A News API key: [https://newsapi.org/](https://newsapi.org/)
 
 ### Installation
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/DevEslam1/news_app.git
+    git clone [https://github.com/DevEslam1/news_app.git](https://github.com/DevEslam1/news_app.git)
     ```
 2.  Install packages
     ```sh
@@ -60,6 +57,3 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     flutter run
     ```
-
-
-
