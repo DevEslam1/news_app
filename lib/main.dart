@@ -1,62 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/utils/settings_provider.dart';
-import 'package:news_app/views/home_view.dart';
 import 'package:provider/provider.dart';
+import 'core/di/service_locator.dart';
+import 'presentation/providers/news_provider.dart';
+import 'presentation/providers/search_provider.dart';
+import 'presentation/providers/bookmarks_provider.dart';
+import 'presentation/providers/settings_provider.dart';
+import 'presentation/screens/main_screen.dart';
+import 'core/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SettingsProvider().loadSettings();
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => SettingsProvider(),
-      child: const NewsApp(),
-    ),
-  );
+  await initServiceLocator();
+  runApp(const NewsvilleApp());
 }
 
-class NewsApp extends StatelessWidget {
-  const NewsApp({super.key});
+class NewsvilleApp extends StatelessWidget {
+  const NewsvilleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<SettingsProvider>(
-      builder: (context, settings, child) {
-        final lightTheme = ThemeData.light().copyWith(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-          appBarTheme: const AppBarTheme(
-            foregroundColor: Colors.black,
-            titleTextStyle: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        );
-
-        final darkTheme = ThemeData.dark().copyWith(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
-            brightness: Brightness.dark,
-          ),
-          useMaterial3: true,
-          appBarTheme: const AppBarTheme(
-            foregroundColor: Colors.white,
-            titleTextStyle: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        );
-
-        return MaterialApp(
-          title: 'News App',
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-          debugShowCheckedModeBanner: false,
-          home: const HomeView(),
-        );
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => sl<SettingsProvider>()),
+        ChangeNotifierProvider(create: (_) => sl<NewsProvider>()),
+        ChangeNotifierProvider(create: (_) => sl<SearchProvider>()),
+        ChangeNotifierProvider(create: (_) => sl<BookmarksProvider>()),
+      ],
+      child: Consumer<SettingsProvider>(
+        builder: (context, settings, child) {
+          return MaterialApp(
+            title: 'Newsville',
+            debugShowCheckedModeBanner: false,
+            themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            theme: ThemeData.light(useMaterial3: true), // Placeholder for light theme
+            darkTheme: AppTheme.darkTheme,
+            home: const MainScreen(),
+          );
+        },
+      ),
     );
   }
 }

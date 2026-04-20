@@ -1,59 +1,105 @@
-# News App
+# NewsCloud 🗞️
 
-A simple news application built with Flutter that displays the latest headlines from various categories.
+**Newsville** (NewsCloud) is a premium, high-performance news application built with Flutter, showcasing **Clean Architecture** principles and a sophisticated **Editorial-Style Dark UI**.
 
-## Features
+The app provides a seamless reading experience with real-time headlines, offline caching, and a robust search engine, all while maintaining a highly maintainable and testable codebase.
 
-* Browse news headlines by category.
-* View news from different countries.
-* Search for articles.
-* Change country and language for the news.
-* Pull to refresh for the latest news.
-* Shimmer loading effect while fetching data.
-* Transparent app bar for a better reading experience.
-* Dynamic app bar title: includes an app icon and 'NewsCloud' text, where 'News' adapts to the theme and 'Cloud' is always orange.
-* Dark mode support, configurable in settings and now the default.
-* Offline snackbar changed to red for better visibility.
+---
 
-## Screenshots
+## ✨ Features
 
-| Light Theme | Dark Theme |
-| :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/c06369aa-f18a-4fa6-ba3e-8d6bf6098d97" width="300" alt="Light Theme" /> | <img src="https://github.com/user-attachments/assets/9711d6fc-5734-4ee6-9b89-8b8c692c16ef" width="300" alt="Dark Theme" /> |
+- 🎭 **Premium Dark Experience**: A bespoke editorial design featuring vibrant primary accents, smooth gradients, and cinematic hero cards.
+- 📂 **Smart Categorization**: Browse via curated topics including Business, Tech, Science, and more.
+- 🔍 **Advanced Search**: Instant global news search with persistent local search history.
+- 💾 **Offline Bookmarking**: Save articles to a local SQLite database for offline reading.
+- 🌩️ **Real-time Synchronization**: Powered by NewsAPI with smart pull-to-refresh and interactive loading states.
+- 🌍 **Localized Content**: Dynamic localization supporting multiple languages and target countries.
 
-## Dependencies
+---
 
-* [dio](https://pub.dev/packages/dio): A powerful HTTP client for Dart, which is used to make requests to the News API.
-* [shimmer](https://pub.dev/packages/shimmer): A Flutter package that provides an easy way to add a shimmer effect to your widgets.
-* [cached_network_image](https://pub.dev/packages/cached_network_image): A Flutter library to load and cache network images.
-* [shared_preferences](https://pub.dev/packages/shared_preferences): A Flutter plugin for reading and writing simple key-value pairs.
-* [provider](https://pub.dev/packages/provider): A wrapper around `InheritedWidget` to make them easier to use and more reusable.
-* [flutter_lints](https://pub.dev/packages/flutter_lints): A package that contains a set of recommended lints to encourage good coding practices.
+## 🏗️ Architecture: Clean & Scalable
 
-## Getting Started
+The project has been refactored from the ground up using **Clean Architecture** and **SOLID** principles. This decoupling ensures the app remains scalable and easy to maintain.
 
-To get a local copy up and running, follow these simple steps.
+### Layers:
+
+1.  **Presentation Layer**:
+    - Uses **Provider** for reactive state management.
+    - Custom UI components designed for reusability.
+    - Seamless navigation using a shell navigation pattern.
+2.  **Domain Layer**:
+    - Pure Dart entities and Use Cases.
+    - Zero dependency on external frameworks (Framework Agnostic).
+3.  **Data Layer**:
+    - **Remote Source**: Integrated with **Dio** for robust networking.
+    - **Local Source**: Powered by **sqflite** for persistent storage and **shared_preferences** for settings.
+    - Mapper logic to keep Domain entities clean from API DTOs.
+
+---
+
+## 🛠️ Technical Stack
+
+- **Framework**: [Flutter](https://flutter.dev/) (Channel Stable)
+- **State Management**: [Provider](https://pub.dev/packages/provider)
+- **Dependency Injection**: [GetIt](https://pub.dev/packages/get_it)
+- **Networking**: [Dio](https://pub.dev/packages/dio) with custom Interceptors
+- **Persistence**: [SQLite (sqflite)](https://pub.dev/packages/sqflite) & [Shared Preferences](https://pub.dev/packages/shared_preferences)
+- **Design Patterns**: Service Locator, Repository Pattern, Mapper Pattern
+- **UI Essentials**: Cached Network Image, Google Fonts (Public Sans / Inter), Shimmer
+
+---
+
+## 📸 visual Showcase
+
+|                                         Home Feed                                          |                                         Article Details                                         |                                          Categories                                          |
+| :----------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
+| <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Home+Feed" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Article+Detail" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Topics+Grid" width="250" /> |
+
+|                                            Search                                             |                                           Bookmarks                                            |                                          Profile                                          |
+| :-------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+| <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Search+Logic" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Local+Storage" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Settings" width="250" /> |
+
+_(Note: Replace placeholders with actual screenshots from your running app for a professional look)_
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-* Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
-* A News API key: [https://newsapi.org/](https://newsapi.org/)
+- Flutter SDK (latest stable)
+- News API Key from [newsapi.org](https://newsapi.org/)
 
-### Installation
+### Setup
 
-1.  Clone the repo
-    ```sh
-    git clone [https://github.com/DevEslam1/news_app.git](https://github.com/DevEslam1/news_app.git)
-    ```
-2.  Install packages
-    ```sh
-    flutter pub get
-    ```
-3.  Add your API key in `lib/services/news_service.dart`
-    ```dart
-    final String _apiKey = 'YOUR_API_KEY';
-    ```
-4.  Run the app
-    ```sh
-    flutter run
-    ```
+1. **Clone the project**:
+   ```bash
+   git clone https://github.com/DevEslam1/news_app.git
+   cd news_app
+   ```
+2. **Install Dependencies**:
+   ```bash
+   flutter pub get
+   ```
+3. **Configure API Key**:
+   Navigate to `lib/core/constants/api_constants.dart` and add your key:
+   ```dart
+   static const String apiKey = 'YOUR_API_KEY';
+   ```
+4. **Run Application**:
+   ```bash
+   flutter run
+   ```
+
+---
+
+## 👨‍💻 Developer
+
+**Eslam** - Senior Flutter Developer
+
+- [GitHub](https://github.com/DevEslam1)
+
+---
+
+> [!TIP]
+> This project is a perfect demonstration of **Clean Architecture** in Flutter. Explore the `lib/` directory to see the layer separation in action!
