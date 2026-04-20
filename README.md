@@ -53,11 +53,11 @@ The project has been refactored from the ground up using **Clean Architecture** 
 
 |                                         Home Feed                                          |                                         Article Details                                         |                                          Categories                                          |
 | :----------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-| <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Home+Feed" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Article+Detail" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Topics+Grid" width="250" /> |
+| <img src="./screenshots/home.png" width="250" /> | <img src="./screenshots/details.png" width="250" /> | <img src="./screenshots/categories.png" width="250" /> |
 
 |                                            Search                                             |                                           Bookmarks                                            |                                          Profile                                          |
 | :-------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
-| <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Search+Logic" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Local+Storage" width="250" /> | <img src="https://via.placeholder.com/250x500/0A0E21/FFFFFF?text=Settings" width="250" /> |
+| <img src="./screenshots/search.png" width="250" /> | <img src="./screenshots/bookmarks.png" width="250" /> | <img src="./screenshots/profile.png" width="250" /> |
 
 _(Note: Replace placeholders with actual screenshots from your running app for a professional look)_
 
