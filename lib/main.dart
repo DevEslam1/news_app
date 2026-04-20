@@ -7,6 +7,7 @@ import 'presentation/providers/bookmarks_provider.dart';
 import 'presentation/providers/settings_provider.dart';
 import 'presentation/screens/main_screen.dart';
 import 'presentation/screens/onboarding/onboarding_screen.dart';
+import 'presentation/screens/splash/splash_screen.dart';
 import 'core/theme/app_theme.dart';
 
 void main() async {
@@ -30,14 +31,12 @@ class NewsvilleApp extends StatelessWidget {
       child: Consumer<SettingsProvider>(
         builder: (context, settings, child) {
           return MaterialApp(
-            title: 'Newsville',
+            title: 'NewsCloud',
             debugShowCheckedModeBanner: false,
             themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
-            home: settings.isFirstLaunch
-                ? const OnboardingScreen()
-                : const MainScreen(),
+            home: const SplashScreen(),
           );
         },
       ),

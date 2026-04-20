@@ -117,10 +117,19 @@ class FeaturedArticleCard extends StatelessWidget {
                                 ),
                       ),
                       const Spacer(),
-                      Icon(Icons.bookmark_border_rounded,
-                          color: Colors.grey[600]),
+                      Icon(
+                        Icons.bookmark_border_rounded,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.grey[400]
+                            : Colors.grey[600],
+                      ),
                       const SizedBox(width: 12),
-                      Icon(Icons.share_outlined, color: Colors.grey[600]),
+                      Icon(
+                        Icons.share_outlined,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.grey[400]
+                            : Colors.grey[600],
+                      ),
                     ],
                   ),
                 ],

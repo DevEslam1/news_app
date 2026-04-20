@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/categories/categories_screen.dart';
@@ -26,50 +27,58 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: IndexedStack(
         index: _selectedIndex,
         children: _screens,
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Theme.of(context).shadowColor.withValues(alpha: 0.2),
-              blurRadius: 20,
-              offset: const Offset(0, -5),
+      bottomNavigationBar: ClipRRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.7),
+              border: Border(
+                top: BorderSide(
+                  color: Theme.of(context).dividerColor.withValues(alpha: 0.3),
+                  width: 0.5,
+                ),
+              ),
             ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: (index) => setState(() => _selectedIndex = index),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              activeIcon: Icon(Icons.home_rounded),
-              label: 'Home',
+            child: BottomNavigationBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              currentIndex: _selectedIndex,
+              onTap: (index) => setState(() => _selectedIndex = index),
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home_outlined),
+                  activeIcon: Icon(Icons.home_rounded),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.grid_view_outlined),
+                  activeIcon: Icon(Icons.grid_view_rounded),
+                  label: 'Topics',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search_rounded),
+                  activeIcon: Icon(Icons.search_rounded),
+                  label: 'Search',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.bookmark_outline_rounded),
+                  activeIcon: Icon(Icons.bookmark_rounded),
+                  label: 'Saved',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person_outline_rounded),
+                  activeIcon: Icon(Icons.person_rounded),
+                  label: 'Profile',
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.grid_view_outlined),
-              activeIcon: Icon(Icons.grid_view_rounded),
-              label: 'Topics',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search_rounded),
-              activeIcon: Icon(Icons.search_rounded),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark_outline_rounded),
-              activeIcon: Icon(Icons.bookmark_rounded),
-              label: 'Saved',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline_rounded),
-              activeIcon: Icon(Icons.person_rounded),
-              label: 'Profile',
-            ),
-          ],
+          ),
         ),
       ),
     );

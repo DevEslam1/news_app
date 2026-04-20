@@ -101,7 +101,7 @@ class OnboardingScreen extends StatelessWidget {
                     const SizedBox(height: 24),
                     // Title
                     Text(
-                      'Personalized\nNews',
+                      'NewsCloud',
                       style: GoogleFonts.publicSans(
                         fontSize: 40,
                         fontWeight: FontWeight.w800,

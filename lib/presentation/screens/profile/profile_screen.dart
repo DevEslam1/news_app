@@ -208,7 +208,14 @@ class ProfileScreen extends StatelessWidget {
                   title: 'Dark Mode',
                   trailing: Switch(
                     value: settings.isDarkMode,
-                    activeThumbColor: Theme.of(context).colorScheme.primary,
+                    activeThumbColor: Colors.white,
+                    activeTrackColor: Theme.of(context)
+                        .colorScheme
+                        .primary
+                        .withValues(alpha: 0.8),
+                    inactiveThumbColor: Colors.grey[400],
+                    inactiveTrackColor:
+                        Theme.of(context).colorScheme.surfaceContainerHighest,
                     onChanged: (val) => settings.setDarkMode(val),
                   ),
                 ),
@@ -238,6 +245,23 @@ class ProfileScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold)),
                   ),
                 ),
+                const SizedBox(height: 10),
+                SizedBox(
+                  width: double.infinity,
+                  child: TextButton(
+                    onPressed: () {
+                      settings.prefs.setBool('isFirstLaunch', true);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text(
+                                'Onboarding reset! Please restart the app.')),
+                      );
+                    },
+                    child: const Text('Reset Onboarding (Debug)',
+                        style: TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.bold)),
+                  ),
+                ),
                 const SizedBox(height: 40),
               ],
             ),
@@ -261,7 +285,12 @@ class ProfileScreen extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(icon, color: Theme.of(context).colorScheme.primary),
+          Icon(
+            icon,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.blue[300]
+                : Theme.of(context).colorScheme.primary,
+          ),
           const SizedBox(width: 16),
           Text(title,
               style: Theme.of(context)

@@ -10,15 +10,15 @@ class AppTheme {
       primaryColor: AppColors.primary,
       scaffoldBackgroundColor: AppColors.background,
       colorScheme: const ColorScheme.dark(
-        primary: AppColors.primary,
+        primary:
+            Color(0xFF8690EE), // More vibrant blue for dark mode visibility
         secondary: AppColors.secondary,
         surface: AppColors.surface,
         error: AppColors.error,
-        onPrimary: Colors.white,
+        onPrimary: Color(0xFF000666),
         onSecondary: Colors.white,
         onSurface: AppColors.onSurface,
       ),
-      
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.background,
         elevation: 0,
@@ -26,15 +26,13 @@ class AppTheme {
         titleTextStyle: AppTextStyles.headlineMedium,
         iconTheme: const IconThemeData(color: AppColors.onSurface),
       ),
-      
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.surface,
-        selectedItemColor: AppColors.primary,
+        selectedItemColor: Colors.white,
         unselectedItemColor: AppColors.grey,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
-      
       cardTheme: CardThemeData(
         color: AppColors.surface,
         elevation: 0,
@@ -42,7 +40,6 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-      
       textTheme: TextTheme(
         displayLarge: AppTextStyles.displayLarge,
         headlineMedium: AppTextStyles.headlineMedium,
@@ -51,7 +48,6 @@ class AppTheme {
         bodyMedium: AppTextStyles.bodyMedium,
         labelLarge: AppTextStyles.labelLarge,
       ),
-      
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.surface,
@@ -63,7 +59,6 @@ class AppTheme {
         prefixIconColor: AppColors.grey,
         suffixIconColor: AppColors.grey,
       ),
-      
       dividerTheme: const DividerThemeData(
         color: AppColors.surfaceVariant,
         thickness: 1,
@@ -88,15 +83,14 @@ class AppTheme {
         onSecondary: Colors.white,
         onSurface: Colors.black87,
       ),
-      
       appBarTheme: AppBarTheme(
         backgroundColor: const Color(0xFFF5F7FA),
         elevation: 0,
         centerTitle: false,
-        titleTextStyle: AppTextStyles.headlineMedium.copyWith(color: Colors.black87),
+        titleTextStyle:
+            AppTextStyles.headlineMedium.copyWith(color: Colors.black87),
         iconTheme: const IconThemeData(color: Colors.black87),
       ),
-      
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
         selectedItemColor: AppColors.primary,
@@ -104,7 +98,6 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
-      
       cardTheme: CardThemeData(
         color: Colors.white,
         elevation: 0,
@@ -112,16 +105,16 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-      
       textTheme: TextTheme(
-        displayLarge: AppTextStyles.displayLarge.copyWith(color: Colors.black87),
-        headlineMedium: AppTextStyles.headlineMedium.copyWith(color: Colors.black87),
+        displayLarge:
+            AppTextStyles.displayLarge.copyWith(color: Colors.black87),
+        headlineMedium:
+            AppTextStyles.headlineMedium.copyWith(color: Colors.black87),
         titleLarge: AppTextStyles.titleLarge.copyWith(color: Colors.black87),
         bodyLarge: AppTextStyles.bodyLarge.copyWith(color: Colors.black87),
         bodyMedium: AppTextStyles.bodyMedium.copyWith(color: Colors.black87),
         labelLarge: AppTextStyles.labelLarge.copyWith(color: Colors.black87),
       ),
-      
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.white,
@@ -133,7 +126,6 @@ class AppTheme {
         prefixIconColor: AppColors.grey,
         suffixIconColor: AppColors.grey,
       ),
-      
       dividerTheme: const DividerThemeData(
         color: Color(0xFFE4E7EB),
         thickness: 1,

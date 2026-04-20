@@ -59,10 +59,12 @@ class CompactArticleTile extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.access_time,
                         size: 14,
-                        color: AppColors.grey,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.grey[400]
+                            : AppColors.grey,
                       ),
                       const SizedBox(width: 4),
                       Text(

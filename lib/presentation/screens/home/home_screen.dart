@@ -48,12 +48,25 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'NewsCloud ',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w900,
-                letterSpacing: 1.2,
-              ),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/app_icon.png',
+              width: 32,
+              height: 32,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(width: 12),
+            Text(
+              'NEWSCLOUD',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1.2,
+                  ),
+            ),
+          ],
         ),
         centerTitle: true,
       ),
