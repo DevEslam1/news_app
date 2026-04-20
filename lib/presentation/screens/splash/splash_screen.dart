@@ -49,9 +49,9 @@ class _SplashScreenState extends State<SplashScreen>
 
   void _navigate() {
     if (!mounted) return;
-    
+
     final isFirstLaunch = context.read<SettingsProvider>().isFirstLaunch;
-    
+
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
@@ -95,7 +95,8 @@ class _SplashScreenState extends State<SplashScreen>
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF1A237E).withValues(alpha: 0.1),
+                            color:
+                                const Color(0xFF1A237E).withValues(alpha: 0.1),
                             blurRadius: 40,
                             offset: const Offset(0, 10),
                           ),
@@ -103,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen>
                       ),
                       padding: const EdgeInsets.all(16),
                       child: Image.asset(
-                        'assets/app_icon.png',
+                        'assets/appbar.png',
                         fit: BoxFit.contain,
                       ),
                     ),

@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/app_icon.png',
+              'assets/appbar.png',
               width: 32,
               height: 32,
               fit: BoxFit.contain,
