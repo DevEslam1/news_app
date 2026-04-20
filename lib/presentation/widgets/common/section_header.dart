@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../../../core/theme/app_colors.dart';
 
 class SectionHeader extends StatelessWidget {
   final String title;
@@ -23,17 +21,17 @@ class SectionHeader extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppTextStyles.titleLarge,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           if (actionLabel != null)
             GestureDetector(
               onTap: onActionTap,
               child: Text(
                 actionLabel!,
-                style: AppTextStyles.labelLarge.copyWith(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ),
         ],

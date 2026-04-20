@@ -11,15 +11,18 @@ class SettingsProvider extends ChangeNotifier {
   String _country = 'us';
   String _language = 'en';
   bool _isDarkMode = true;
+  bool _isFirstLaunch = true;
 
   String get country => _country;
   String get language => _language;
   bool get isDarkMode => _isDarkMode;
+  bool get isFirstLaunch => _isFirstLaunch;
 
   void _loadSettings() {
     _country = prefs.getString('country') ?? 'us';
     _language = prefs.getString('language') ?? 'en';
     _isDarkMode = prefs.getBool('isDarkMode') ?? true;
+    _isFirstLaunch = prefs.getBool('isFirstLaunch') ?? true;
     notifyListeners();
   }
 
@@ -38,6 +41,12 @@ class SettingsProvider extends ChangeNotifier {
   Future<void> setDarkMode(bool value) async {
     _isDarkMode = value;
     await prefs.setBool('isDarkMode', value);
+    notifyListeners();
+  }
+
+  Future<void> completeOnboarding() async {
+    _isFirstLaunch = false;
+    await prefs.setBool('isFirstLaunch', false);
     notifyListeners();
   }
 }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
 
 class EmptyStateView extends StatelessWidget {
   final String message;
@@ -22,13 +20,16 @@ class EmptyStateView extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: AppColors.grey.withValues(alpha: 0.5),
+              color: Colors.grey.withValues(alpha: 0.5),
               size: 80,
             ),
             const SizedBox(height: 16),
             Text(
               message,
-              style: AppTextStyles.titleLarge.copyWith(color: AppColors.grey),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge
+                  ?.copyWith(color: Colors.grey),
               textAlign: TextAlign.center,
             ),
           ],

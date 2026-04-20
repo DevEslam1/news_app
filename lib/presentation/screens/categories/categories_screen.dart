@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/app_text_styles.dart';
 import 'category_feed_screen.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -54,10 +53,10 @@ class CategoriesScreen extends StatelessWidget {
               child: Center(
                 child: Text(
                   category['name']!,
-                  style: AppTextStyles.titleLarge.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
             ),

@@ -4,21 +4,21 @@ import 'app_colors.dart';
 
 class AppTextStyles {
   // Headlines (Public Sans for Editorial Authority)
-  static TextStyle displayLarge = GoogleFonts.publicSans(
+  static TextStyle displayLarge = GoogleFonts.inter(
     fontSize: 32,
     fontWeight: FontWeight.bold,
     color: AppColors.onBackground,
     letterSpacing: -0.5,
   );
 
-  static TextStyle headlineMedium = GoogleFonts.publicSans(
+  static TextStyle headlineMedium = GoogleFonts.inter(
     fontSize: 24,
     fontWeight: FontWeight.w700,
     color: AppColors.onBackground,
     letterSpacing: -0.5,
   );
 
-  static TextStyle titleLarge = GoogleFonts.publicSans(
+  static TextStyle titleLarge = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w600,
     color: AppColors.onBackground,

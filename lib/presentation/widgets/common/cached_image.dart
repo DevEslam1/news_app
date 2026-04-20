@@ -18,12 +18,16 @@ class CachedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor = isDark ? AppColors.surfaceTier2 : Colors.grey[200];
+    final iconColor = isDark ? AppColors.grey : Colors.grey[500];
+
     if (imageUrl == null || imageUrl!.isEmpty) {
       return Container(
         width: width,
         height: height,
-        color: AppColors.surfaceTier2,
-        child: const Icon(Icons.broken_image_outlined, color: AppColors.grey),
+        color: bgColor,
+        child: Icon(Icons.broken_image_outlined, color: iconColor),
       );
     }
 
@@ -35,13 +39,13 @@ class CachedImage extends StatelessWidget {
       placeholder: (context, url) => Container(
         width: width,
         height: height,
-        color: AppColors.surfaceTier2,
+        color: bgColor,
       ),
       errorWidget: (context, url, error) => Container(
         width: width,
         height: height,
-        color: AppColors.surfaceTier2,
-        child: const Icon(Icons.broken_image_outlined, color: AppColors.grey),
+        color: bgColor,
+        child: Icon(Icons.broken_image_outlined, color: iconColor),
       ),
     );
   }

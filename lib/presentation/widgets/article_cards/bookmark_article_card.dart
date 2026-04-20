@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../domain/entities/article.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
 import '../common/cached_image.dart';
 
 class BookmarkArticleCard extends StatelessWidget {
@@ -23,7 +21,7 @@ class BookmarkArticleCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: AppColors.surfaceTier1,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
@@ -79,21 +77,27 @@ class BookmarkArticleCard extends StatelessWidget {
                           horizontal: 8, vertical: 2),
                       margin: const EdgeInsets.only(bottom: 8),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withValues(alpha: 0.2),
+                        color: Theme.of(context)
+                            .colorScheme
+                            .primary
+                            .withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
                         article.category!.toUpperCase(),
-                        style: AppTextStyles.labelLarge.copyWith(
-                          color: AppColors.primary,
-                          fontSize: 10,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                     ),
                   Text(
                     article.title,
-                    style: AppTextStyles.titleLarge.copyWith(fontSize: 18),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge
+                        ?.copyWith(fontSize: 18),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -103,11 +107,11 @@ class BookmarkArticleCard extends StatelessWidget {
                     children: [
                       Text(
                         article.sourceName ?? 'News',
-                        style: AppTextStyles.labelLarge,
+                        style: Theme.of(context).textTheme.labelLarge,
                       ),
                       Text(
                         article.publishedAt?.split('T')[0] ?? '',
-                        style: AppTextStyles.labelLarge,
+                        style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ],
                   ),

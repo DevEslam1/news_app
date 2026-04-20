@@ -4,8 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../core/utils/date_formatter.dart';
 import '../../../domain/entities/article.dart';
 import '../../providers/bookmarks_provider.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
+
 import '../../widgets/common/cached_image.dart';
 
 class ArticleDetailScreen extends StatelessWidget {
@@ -67,7 +66,9 @@ class ArticleDetailScreen extends StatelessWidget {
                           isSaved
                               ? Icons.bookmark_rounded
                               : Icons.bookmark_outline_rounded,
-                          color: isSaved ? AppColors.primary : Colors.white,
+                          color: isSaved
+                              ? Theme.of(context).colorScheme.primary
+                              : Colors.white,
                         ),
                         onPressed: () => bookmarks.toggleBookmark(article),
                       ),
@@ -103,19 +104,26 @@ class ArticleDetailScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: AppColors.primary.withValues(alpha: 0.1),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .primary
+                                .withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
                             article.category!.toUpperCase(),
-                            style: AppTextStyles.labelLarge
-                                .copyWith(color: AppColors.primary),
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge
+                                ?.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.primary),
                           ),
                         ),
                       const SizedBox(width: 12),
                       Text(
                         DateFormatter.formatFullDate(article.publishedAt),
-                        style: AppTextStyles.labelLarge,
+                        style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ],
                   ),
@@ -124,17 +132,20 @@ class ArticleDetailScreen extends StatelessWidget {
                   // Title
                   Text(
                     article.title,
-                    style: AppTextStyles.displayLarge.copyWith(fontSize: 28),
+                    style: Theme.of(context)
+                        .textTheme
+                        .displayLarge
+                        ?.copyWith(fontSize: 28),
                   ),
                   const SizedBox(height: 20),
 
                   // Author & Source
                   Row(
                     children: [
-                      const CircleAvatar(
+                      CircleAvatar(
                         radius: 18,
-                        backgroundColor: AppColors.surfaceTier2,
-                        child: Icon(Icons.person, color: AppColors.grey),
+                        backgroundColor: Theme.of(context).cardColor,
+                        child: const Icon(Icons.person, color: Colors.grey),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -143,14 +154,16 @@ class ArticleDetailScreen extends StatelessWidget {
                           children: [
                             Text(
                               article.author ?? 'Anonymous',
-                              style: AppTextStyles.titleLarge
-                                  .copyWith(fontSize: 16),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(fontSize: 16),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
                               article.sourceName ?? 'News',
-                              style: AppTextStyles.bodyMedium,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
                           ],
                         ),
@@ -162,7 +175,10 @@ class ArticleDetailScreen extends StatelessWidget {
                   // Description / Body
                   Text(
                     article.subTitle ?? 'No content available.',
-                    style: AppTextStyles.bodyLarge.copyWith(height: 1.8),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(height: 1.8),
                   ),
                   const SizedBox(height: 32),
 
@@ -172,7 +188,7 @@ class ArticleDetailScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () => launchUrl(Uri.parse(article.url)),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primary,
+                        backgroundColor: Theme.of(context).colorScheme.primary,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(

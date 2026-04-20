@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../domain/entities/article.dart';
 import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
 import '../common/cached_image.dart';
 
 class CompactArticleTile extends StatelessWidget {
@@ -21,8 +20,8 @@ class CompactArticleTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         margin: const EdgeInsets.only(bottom: 8),
-        decoration: const BoxDecoration(
-          color: AppColors.background,
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
         ),
         child: Row(
           children: [
@@ -41,19 +40,19 @@ class CompactArticleTile extends StatelessWidget {
                 children: [
                   Text(
                     article.sourceName ?? 'News',
-                    style: AppTextStyles.labelLarge.copyWith(
-                      color: AppColors.primary,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     article.title,
-                    style: AppTextStyles.titleLarge.copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -68,9 +67,9 @@ class CompactArticleTile extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         article.publishedAt?.split('T')[0] ?? '',
-                        style: AppTextStyles.labelLarge.copyWith(
-                          fontSize: 10,
-                        ),
+                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                              fontSize: 10,
+                            ),
                       ),
                     ],
                   ),

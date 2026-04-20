@@ -6,6 +6,7 @@ import 'presentation/providers/search_provider.dart';
 import 'presentation/providers/bookmarks_provider.dart';
 import 'presentation/providers/settings_provider.dart';
 import 'presentation/screens/main_screen.dart';
+import 'presentation/screens/onboarding/onboarding_screen.dart';
 import 'core/theme/app_theme.dart';
 
 void main() async {
@@ -32,9 +33,11 @@ class NewsvilleApp extends StatelessWidget {
             title: 'Newsville',
             debugShowCheckedModeBanner: false,
             themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-            theme: ThemeData.light(useMaterial3: true), // Placeholder for light theme
+            theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
-            home: const MainScreen(),
+            home: settings.isFirstLaunch
+                ? const OnboardingScreen()
+                : const MainScreen(),
           );
         },
       ),

@@ -48,13 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Newsville'),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.notifications_none_rounded),
-          ),
-        ],
+        title: Text(
+          'NewsCloud ',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w900,
+                letterSpacing: 1.2,
+              ),
+        ),
+        centerTitle: true,
       ),
       body: RefreshIndicator(
         onRefresh: () async => _fetchNews(),
@@ -90,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 60,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 10),
                       itemCount: _categories.length,
                       itemBuilder: (context, index) {
                         final category = _categories[index];
@@ -119,7 +121,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => ArticleDetailScreen(article: newsProvider.articles.first),
+                          builder: (_) => ArticleDetailScreen(
+                              article: newsProvider.articles.first),
                         ),
                       ),
                     ),
@@ -148,7 +151,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => ArticleDetailScreen(article: article),
+                            builder: (_) =>
+                                ArticleDetailScreen(article: article),
                           ),
                         ),
                       );
@@ -156,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     childCount: newsProvider.articles.length,
                   ),
                 ),
-                
+
                 const SliverToBoxAdapter(child: SizedBox(height: 20)),
               ],
             );

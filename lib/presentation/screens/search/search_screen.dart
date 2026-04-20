@@ -85,7 +85,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           children: searchProvider.recentSearches.map((query) {
                             return ActionChip(
                               label: Text(query),
-                              backgroundColor: AppColors.surfaceTier2,
+                              backgroundColor: Theme.of(context).brightness == Brightness.dark ? AppColors.surfaceTier2 : Colors.grey[200],
                               onPressed: () {
                                 _controller.text = query;
                                 _onSearch();
